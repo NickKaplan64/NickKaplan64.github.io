@@ -40,6 +40,8 @@ router.get('/api/grades',function(req, res){
             if(err)
             {
                 console.error(err);
+                res.status(500).json({ error: 'Database query failed' });
+                return;
             }
             
             result.rows.forEach( 
